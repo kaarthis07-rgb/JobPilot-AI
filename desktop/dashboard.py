@@ -42,7 +42,56 @@ class DashboardWindow(QWidget):
     self.resume_win.show()
     git pull origin main
 cd desktop
+python main.pyfrom PySide6.QtWidgets import QWidget, QLabel, QPushButton, QVBoxLayout, QHBoxLayout
+from resume import ResumeWindow
+from jobs import JobsWindow
+
+class DashboardWindow(QWidget):
+    def __init__(self):
+        super().__init__()
+        self.setWindowTitle("JobPilot AI - Dashboard")
+        self.resize(900, 650)
+
+        main_layout = QVBoxLayout()
+
+        # Header Title
+        header = QLabel("JobPilot AI Dashboard")
+        header.setStyleSheet("font-size: 22px; font-weight: bold; margin-bottom: 10px;")
+        main_layout.addWidget(header)
+
+        # Navigation Bar Buttons
+        nav_layout = QHBoxLayout()
+
+        self.btn_resume = QPushButton("Resume Parser & ATS")
+        self.btn_jobs = QPushButton("Job Matcher & Skill Gap")
+
+        self.btn_resume.clicked.connect(self.open_resume)
+        self.btn_jobs.clicked.connect(self.open_jobs)
+
+        nav_layout.addWidget(self.btn_resume)
+        nav_layout.addWidget(self.btn_jobs)
+
+        main_layout.addLayout(nav_layout)
+
+        # Body Placeholder
+        body_label = QLabel("Select a module above to get started.")
+        body_label.setStyleSheet("font-size: 14px; color: #888; margin-top: 40px;")
+        main_layout.addWidget(body_label)
+
+        self.setLayout(main_layout)
+
+    def open_resume(self):
+        self.resume_win = ResumeWindow()
+        self.resume_win.show()
+
+    def open_jobs(self):
+        self.jobs_win = JobsWindow()
+        self.jobs_win.show()
+        git pull origin main
+cd desktop
 python main.py
+        
+    
         
     
         
