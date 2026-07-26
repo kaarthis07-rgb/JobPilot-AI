@@ -37,6 +37,17 @@ class LoginWindow(QWidget):
         layout.addWidget(login_btn)
 
         self.setLayout(layout)
+            def login(self):
+        email = self.email.text()
+        password = self.password.text()
+
+        if email and password:
+            self.dashboard = DashboardWindow()
+            self.dashboard.show()
+            self.close()
+        else:
+            QMessageBox.warning(self, "Error", "Please enter both email and password.")
+        
 
     def login(self):
         QMessageBox.information(
