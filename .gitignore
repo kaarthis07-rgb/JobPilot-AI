@@ -1,0 +1,15 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+*.sqlite3
+
+# Environment secrets
+.env
+*.pem
+
+# OS / IDE
+.DS_Store
+.vscode/
+.idea/
