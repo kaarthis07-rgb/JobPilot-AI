@@ -35,4 +35,16 @@ class DashboardWindow(QWidget):
         main_layout.addWidget(body_label)
 
         self.setLayout(main_layout)
+        from resume import ResumeWindow
+        self.btn_resume.clicked.connect(self.open_resume_module)
+        def open_resume_module(self):
+    self.resume_win = ResumeWindow()
+    self.resume_win.show()
+    git pull origin main
+cd desktop
+python main.py
+        
+    
+        
+        
         
